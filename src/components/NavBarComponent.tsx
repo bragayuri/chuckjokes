@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import i18n from "src/lib/i18n";
 import { MobileMenuClosed } from "stories/molecules/MobileMenuClosed";
 import { NavBarItem } from "stories/molecules/NavBarItem";
 import { MobileNavBar } from "stories/organisms/MobileNavBar";
@@ -22,31 +23,31 @@ type NavOptions = {
 const navOptions: readonly NavOptions[] = [
   {
     id: 0,
-    label: "Home",
+    label: i18n.t("navbar.home"),
     href: "#",
     elementId: NavSession.HOME,
   },
   {
     id: 1,
-    label: "About",
+    label: i18n.t("navbar.about"),
     href: "#",
     elementId: NavSession.ABOUT,
   },
   {
     id: 2,
-    label: "Jokes",
+    label: i18n.t("navbar.jokes"),
     href: "#",
     elementId: NavSession.JOKES,
   },
   {
     id: 3,
-    label: "Categories",
+    label: i18n.t("navbar.categories"),
     href: "#",
     elementId: NavSession.CATEGORIES,
   },
   {
     id: 4,
-    label: "Search",
+    label: i18n.t("navbar.search"),
     href: "#",
     elementId: NavSession.SEARCH,
   },
@@ -71,7 +72,7 @@ const NavBarComponent = (): JSX.Element => {
 
   return (
     <>
-      <NavBar labels={{ button: "Insipre Yourself" }}>
+      <NavBar labels={{ button: i18n.t("navbar.inspire") }}>
         {navOptions.map((item) => (
           <div key={item.id}>
             <NavBarItem
@@ -86,7 +87,7 @@ const NavBarComponent = (): JSX.Element => {
       <MobileMenuClosed labels={{ open: "Open Navbar" }} onClick={() => setIsActive(!isActive)} />
       {isActive && (
         <MobileNavBar
-          labels={{ close: "Close Navbar", button: "Inspire yourself" }}
+          labels={{ close: "Close Navbar", button: i18n.t("navbar.inspire") }}
           onClose={() => setIsActive(!isActive)}>
           {navOptions.map((item) => (
             <div key={item.id}>
