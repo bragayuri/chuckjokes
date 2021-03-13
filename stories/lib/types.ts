@@ -13,3 +13,17 @@ export type Color =
   | "indigo"
   | "purple"
   | "pink";
+
+export type Category = {
+  readonly id: number;
+  readonly category: string;
+};
+
+export type RandomObject = {
+  readonly id: string;
+  readonly categories: readonly string[];
+  readonly created_at: string;
+  readonly icon_url: string;
+  readonly url: string;
+  readonly value: string;
+};
