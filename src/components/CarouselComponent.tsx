@@ -1,11 +1,13 @@
 import Carousel from "nuka-carousel";
 import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight, BsCircle, BsCircleFill } from "react-icons/bs";
+import { useAppState } from "src/lib/context";
 
 import SlideFirst from "../components/slides/SlideFirst";
 
 const CarouselComponent = (): JSX.Element => {
   const [isActive, setIsActive] = useState(true);
+  const { getRandomJoke } = useAppState();
 
   return (
     <Carousel
@@ -33,6 +35,7 @@ const CarouselComponent = (): JSX.Element => {
           onClick={() => {
             goToSlide(0);
             setIsActive(true);
+            getRandomJoke();
           }}
         />
       )}
@@ -44,6 +47,7 @@ const CarouselComponent = (): JSX.Element => {
           onClick={() => {
             goToSlide(1);
             setIsActive(false);
+            getRandomJoke();
           }}
         />
       )}>

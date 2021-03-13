@@ -15,6 +15,8 @@
     "build-storybook-css": "npx tailwindcss-cli@latest build styles/globals.scss -o styles/globals.css"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1",
     "next": "10.0.8",
     "nuka-carousel": "^4.7.5",
     "react": "17.0.1",
