@@ -15,7 +15,7 @@ export const NavBarItem: React.FC<NavBarItemProperties> = ({
 }) => {
   return (
     <div onClick={() => handleScroll(elementId)}>
-      <span className="text-red-900 cursor-pointer uppercase whitespace-nowrap text-sm hover:text-yellow-200 transition duration-700">
+      <span className="text-red-900 pe-4 ps-2 cursor-pointer uppercase whitespace-nowrap text-sm hover:text-yellow-200 transition duration-700">
         {label}
       </span>
       {isActive && <div className="h-0.5 bg-green-700 w-full mt-1 transition duration-700" />}

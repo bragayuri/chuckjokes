@@ -13,6 +13,6 @@ const languages = {
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
 const i18n = process.env.NODE_ENV === "development" ? rosettaDebug(languages) : rosetta(languages);
-i18n.locale("en");
+i18n.locale("ar");
 
 export default i18n;
