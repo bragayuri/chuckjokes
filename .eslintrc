@@ -1,0 +1,31 @@
+{
+    "plugins": [
+        "unicorn",
+        "functional"
+    ],
+    "extends": [
+        "universe/web",
+        "universe/shared/typescript-analysis",
+        "plugin:unicorn/recommended",
+        "plugin:functional/external-recommended",
+        "plugin:functional/lite"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx",
+                "*.d.ts"
+            ],
+            "parserOptions": {
+                "project": "./tsconfig.json"
+            }
+        }
+    ],
+    "rules": {
+        "unicorn/filename-case": "off",
+        "unicorn/no-null": "off",
+        "functional/no-return-void": "off",
+        "functional/no-mixed-type": "off"
+    }
+}
