@@ -9,7 +9,7 @@ import NavBarComponent from "./NavBarComponent";
 const Container = ({ children }: { readonly children: ReactNode }): JSX.Element => {
   const dir = safeLocalStorage.getItem("dir") || "ltr";
   return (
-    <div dir={dir}>
+    <html dir={dir}>
       <div className="w-full flex flex-col justify-between">
         <NavBarComponent />
         <div className="overflow-y-auto lg:static lg:h-auto">
@@ -17,7 +17,7 @@ const Container = ({ children }: { readonly children: ReactNode }): JSX.Element 
           <Footer />
         </div>
       </div>
-    </div>
+    </html>
   );
 };
 
