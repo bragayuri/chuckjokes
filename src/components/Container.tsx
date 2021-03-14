@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 /* eslint-disable unicorn/prevent-abbreviations */
 import React, { ReactNode } from "react";
 import safeLocalStorage from "src/lib/safeLocalStorage";
@@ -8,7 +9,7 @@ import NavBarComponent from "./NavBarComponent";
 const Container = ({ children }: { readonly children: ReactNode }): JSX.Element => {
   const dir = safeLocalStorage.getItem("dir") || "ltr";
   return (
-    <html dir={dir}>
+    <div dir={dir}>
       <div className="w-full flex flex-col justify-between">
         <NavBarComponent />
         <div className="overflow-y-auto lg:static lg:h-auto">
@@ -16,7 +17,7 @@ const Container = ({ children }: { readonly children: ReactNode }): JSX.Element 
           <Footer />
         </div>
       </div>
-    </html>
+    </div>
   );
 };
 

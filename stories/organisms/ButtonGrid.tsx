@@ -16,8 +16,8 @@ export type ButtonGridProperties = {
 
 export const ButtonGrid: React.FC<ButtonGridProperties> = ({ buttonProps }) => {
   return (
-    <div className="max-w-md flex justify-center items-center p-10">
-      <div className="shadow-2xl grid grid-cols-4 gap-x-10 gap-y-2">
+    <div className="max-w-md flex justify-center items-center">
+      <div className="shadow-2xl grid grid-cols-4 ">
         {buttonProps?.map((item) => (
           <Button key={item.id} color={item.color} id={item.id} onClick={item.onClick}>
             {item.label}
