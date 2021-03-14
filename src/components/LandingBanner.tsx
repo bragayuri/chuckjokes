@@ -26,11 +26,11 @@ const LandingBanner = (): JSX.Element => {
             </article>
           </article>
         </section>
-        <aside className="w-full relative flex justify-center">
+        <aside className="w-full flex justify-center my-0 py-0">
           <img
-            className="rounded object-fit max-w-sm xl:max-w-full"
-            src="/main-2.png"
-            alt="unopar-logo"
+            className="object-contain w-96 h-96 my-0 py-0 xl:h-auto xl:w-auto xl:max-w-full"
+            src="/landing-icon.png"
+            alt="main-logo"
           />
         </aside>
       </div>
