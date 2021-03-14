@@ -1,6 +1,6 @@
 import api from "src/services/api";
 
-export const pickAJoke = async (): Promise<any> => {
+export const getRandomObject = async (): Promise<any> => {
   return new Promise((resolve, reject) => {
     const data = api.get("/random").then((response) => response.data);
     if (data) {

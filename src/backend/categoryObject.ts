@@ -10,3 +10,14 @@ export const getByCategory = async (category: string): Promise<any> => {
     }
   });
 };
+
+export const getCategories = async (): Promise<any> => {
+  return new Promise((resolve, reject) => {
+    const data = api.get("/categories").then((response) => response.data);
+    if (data) {
+      resolve(data);
+    } else {
+      reject(new Error("Chuck Norris do not forgive mistakes! The System is dead!HA Ha HA"));
+    }
+  });
+};

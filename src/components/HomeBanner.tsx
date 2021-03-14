@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { pickAJoke } from "src/backend/randomObject";
+import { getRandomObject } from "src/backend/randomObject";
 import { useAppState } from "src/lib/context";
 import { RandomObject } from "stories/lib/types";
 import { HomeBanner, HomeBannerProperties } from "stories/organisms/HomeBanner";
@@ -9,7 +9,7 @@ const HomeBannerComponent = (): JSX.Element => {
   const [randomJoke, setRandomJoke] = useState("");
 
   const getRandomJoke = async (): Promise<string> => {
-    const result: RandomObject = await pickAJoke();
+    const result: RandomObject = await getRandomObject();
     setRandomJoke(result.value);
 
     return result.value;
