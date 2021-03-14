@@ -12,11 +12,11 @@ export type MobileMenuClosedProperties = {
 export const MobileMenuClosed: React.FC<MobileMenuClosedProperties> = ({ onClick, labels }) => {
   return (
     <>
-      <div className="sticky bg-gray-50 top-0 right-0 shadow h-16 w-full flex-shrink-0 xl:hidden z-30">
+      <div className="sticky bg-gray-50 top-0 right-0 shadow h-16 w-full flex-shrink-0 xl:hidden z-40">
         <div className="flex px-2 py-2 justify-between items-start">
           <img
             className="h-14 w-14 rounded-full shadow object-fit"
-            src={CHUCK_NORRIS_AVATAR}
+            src="/chuck-norris-logo-1.png"
             alt="chuck-norris-logo"
           />
           <button

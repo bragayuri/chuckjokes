@@ -32,7 +32,7 @@ const getClassName = (size: ButtonSize): string => {
       return "w-80 h-16 text-3xl";
 
     default:
-      return "w-72 p-4 text-md";
+      return "w-24 h-24 text-md";
   }
 };
 
@@ -49,7 +49,7 @@ const getColorClassName = (color?: Color): string => {
     case "orange":
       return "bg-orange-600 hover:bg-orange-700 focus:ring-orange-500";
     case "yellow":
-      return "bg-yellow-600 hover:bg-yellow-700 focus:ring-yellow-500";
+      return "bg-yellow-500 hover:bg-yellow-700 focus:ring-yellow-500";
     case "green":
       return "bg-green-600 hover:bg-green-700 focus:ring-green-500";
     case "teal":
@@ -77,7 +77,7 @@ export const Button: FunctionComponent<ButtonProperties> = ({
   disabled = false,
   children,
   className = "",
-  color = "blue",
+  color = "yellow",
 }) => {
   const colorClassName = getColorClassName(color);
 
@@ -89,7 +89,7 @@ export const Button: FunctionComponent<ButtonProperties> = ({
       disabled={disabled}
       className={`${getClassName(
         size,
-      )} flex items-center justify-center text-white rounded-full focus:outline-none cursor-pointer transition duration-500 ${
+      )} flex items-center shadow-2xl justify-center text-white rounded focus:outline-none cursor-pointer transition duration-500 ${
         disabled ? "opacity-75 cursor-not-allowed" : ""
       } ${className} ${colorClassName}`}>
       {children}

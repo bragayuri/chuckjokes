@@ -11,7 +11,6 @@ export default class MyDocument extends Document {
       <Html dir="rtl">
         <Head>
           <link rel="shortcut icon" href="favicon.png" type="image/png" />
-          <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />
