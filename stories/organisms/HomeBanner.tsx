@@ -4,6 +4,7 @@ import { BsPlusCircle } from "react-icons/bs";
 export type HomeBannerProperties = {
   readonly isImgLeft: boolean;
   readonly isRandomObject?: boolean;
+  readonly componentId: string;
   readonly onClickRandom?: () => void;
   readonly img: {
     readonly href: string;
@@ -21,10 +22,11 @@ export const HomeBanner: React.FC<HomeBannerProperties> = ({
   img,
   isImgLeft,
   isRandomObject,
+  componentId,
   onClickRandom,
 }) => {
   return (
-    <div className="w-full">
+    <div id={componentId} className="w-full">
       <div
         className={`flex flex-col lg:${
           isImgLeft ? "flex-row" : "flex-row-reverse"

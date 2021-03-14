@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getByCategory } from "src/backend/categoryObject";
 import { useAppState } from "src/lib/context";
+import i18n from "src/lib/i18n";
 import { CategoryObject, RandomObject } from "stories/lib/types";
 import { capitalizeFirstLetter } from "stories/lib/utils";
 import { ButtonGrid, GridButton } from "stories/organisms/ButtonGrid";
+
+import { NavSession } from "./NavBarComponent";
 
 const CategoriesComponent = (): JSX.Element => {
   const { categories } = useAppState();
@@ -31,7 +34,7 @@ const CategoriesComponent = (): JSX.Element => {
       setButtonProperties(
         categories.map((item) => ({
           id: String(item.id),
-          label: item.category,
+          label: i18n.t(`categories.${item.category}`),
           onClick: () => {
             setActiveCategory(item.category);
           },
@@ -49,7 +52,7 @@ const CategoriesComponent = (): JSX.Element => {
   }, [activeCategory]);
 
   return (
-    <div className="flex flex-col-reverse xl:flex-row pb-20">
+    <div id={NavSession.CATEGORIES} className="flex flex-col-reverse xl:flex-row pb-20">
       <div className="flex-1 flex justify-center items-center">
         <ButtonGrid buttonProps={buttonProperties} />
       </div>
@@ -63,7 +66,7 @@ const CategoriesComponent = (): JSX.Element => {
             categoryObject.category,
           )}`}</div>
         ) : (
-          <div className="font-bold text-3xl text-black pb-4">Pick a Category</div>
+          <div className="font-bold text-3xl text-black pb-4">{i18n.t("category.pick")}</div>
         )}
         <div className="flex flex-col justify-items-auto items-center mx-10 max-w-md">
           <div className="xl:px-20 pb-16 xl:pb-20  text-xl text-black">{categoryObject.value}</div>

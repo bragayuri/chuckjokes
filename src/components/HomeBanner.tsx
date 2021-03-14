@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getRandomObject } from "src/backend/randomObject";
 import { useAppState } from "src/lib/context";
+import i18n from "src/lib/i18n";
 import { RandomObject } from "stories/lib/types";
 import { HomeBanner, HomeBannerProperties } from "stories/organisms/HomeBanner";
+
+import { NavSession } from "./NavBarComponent";
 
 const HomeBannerComponent = (): JSX.Element => {
   const { randomObject } = useAppState();
@@ -20,8 +23,9 @@ const HomeBannerComponent = (): JSX.Element => {
 
   const bannerObjects: readonly HomeBannerProperties[] = [
     {
+      componentId: NavSession.DAILY_JOKES,
       labels: {
-        title: "Chuck Joke of the Day",
+        title: i18n.t("home.dailyJoke"),
         main: randomObject?.value ?? "Loading...",
       },
       img: {
@@ -31,8 +35,9 @@ const HomeBannerComponent = (): JSX.Element => {
       isImgLeft: false,
     },
     {
+      componentId: NavSession.ABOUT,
       labels: {
-        title: "More about Mr. Norris...",
+        title: i18n.t("home.moreAbout"),
         main: randomJoke ?? "Loading..",
       },
       img: {
@@ -51,6 +56,7 @@ const HomeBannerComponent = (): JSX.Element => {
       {bannerObjects.map((item) => (
         <div className="mt-14 md:px-10 xl:px-40 " key={item.labels.title}>
           <HomeBanner
+            componentId={item.componentId}
             labels={item.labels}
             img={item.img}
             isImgLeft={item.isImgLeft}
