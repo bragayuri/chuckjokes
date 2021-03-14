@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 /* eslint-disable unicorn/prevent-abbreviations */
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import { getCategories } from "src/backend/categoryObject";

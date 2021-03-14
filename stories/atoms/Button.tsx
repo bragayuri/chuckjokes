@@ -32,7 +32,7 @@ const getClassName = (size: ButtonSize): string => {
       return "w-80 h-16 text-3xl";
 
     default:
-      return "w-24 h-24 text-md";
+      return "px-5 py-5 m-1 xl:px-10 xl:py-10 text-md";
   }
 };
 
