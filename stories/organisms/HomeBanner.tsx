@@ -53,8 +53,8 @@ export const HomeBanner: React.FC<HomeBannerProperties> = ({
           />
 
           <img
-            style={{ width: "270px", height: "540px" }}
-            className="object-contain rounded-full relative left-1 top-0 z-30"
+            style={{ width: "350px", height: "540px" }}
+            className="object-contain rounded-full relative -left-6 -top-6 z-30"
             src={img.href}
             alt={img.alt}
           />

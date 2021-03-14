@@ -57,7 +57,7 @@ const CategoriesComponent = (): JSX.Element => {
         style={{
           borderRadius: "62% 38% 82% 18% / 61% 59% 41% 39% ",
         }}
-        className="bg-gray-100 max-w-xl flex-1 flex flex-col ms-0  md:ms-80 xl:ms-0 py-24 xl:py-24 items-center">
+        className="bg-gray-100 max-w-xl flex-1 flex flex-col mx-4 md:ms-80 md:me-10 xl:ms-0 py-24 xl:py-24 items-center">
         {categoryObject.category ? (
           <div className="font-bold text-3xl text-black pb-4">{`Facts by Category - ${capitalizeFirstLetter(
             categoryObject.category,

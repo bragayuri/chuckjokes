@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
 
-import { CHUCK_NORRIS_AVATAR } from "../lib/utils";
-
 export type MobileNavBarProperties = {
   readonly children: ReactNode;
   readonly onClose: () => void;

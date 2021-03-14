@@ -26,14 +26,14 @@ const HomeBannerComponent = (): JSX.Element => {
       },
       img: {
         href: "/chuck-norris-logo-1.png",
-        alt: "iphoneImage",
+        alt: "chuck-norris-logo",
       },
       isImgLeft: false,
     },
     {
       labels: {
         title: "More about Mr. Norris...",
-        main: randomJoke,
+        main: randomJoke ?? "Loading..",
       },
       img: {
         href: "/chuck-norris-emoji.png",
