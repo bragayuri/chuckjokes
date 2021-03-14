@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -15,9 +15,14 @@
     "build-storybook-css": "npx tailwindcss-cli@latest build styles/globals.scss -o styles/globals.css"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1",
     "next": "10.0.8",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-icons": "^4.2.0",
+    "rosetta": "^1.1.0",
+    "tailwindcss-rtl": "^0.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

@@ -1,20 +1,16 @@
-import Head from "next/head";
 import React from "react";
+import CategoriesComponent from "src/components/CategoriesComponent";
+import Container from "src/components/Container";
+import HomeBanner from "src/components/HomeBanner";
+import LandingBanner from "src/components/LandingBanner";
 
 const Home = (): JSX.Element => {
   return (
-    <div>
-      <Head>
-        <title>Chuck Norris Great Jokes</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="bg-black h-screen w-full flex justify-center items-center">
-        <div className="font-bold text-white cursor-pointer hover:text-yellow-300">
-          Chuck Norris Jokes WebApp
-        </div>
-      </main>
-    </div>
+    <Container>
+      <LandingBanner />
+      <HomeBanner />
+      <CategoriesComponent />
+    </Container>
   );
 };
 

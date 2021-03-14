@@ -21,7 +21,10 @@
     "paths": {
       "src": [
         "./src"
-      ]
+      ],
+      "stories": [
+        "./stories"
+      ],
     }
   },
   "include": [
