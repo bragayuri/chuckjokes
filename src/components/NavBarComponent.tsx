@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAppState } from "src/lib/context";
 import i18n from "src/lib/i18n";
+import FlagMenu from "stories/molecules/FlagMenu";
 import { MobileMenuClosed } from "stories/molecules/MobileMenuClosed";
 import { NavBarItem } from "stories/molecules/NavBarItem";
 import { MobileNavBar } from "stories/organisms/MobileNavBar";
@@ -65,15 +66,40 @@ const NavBarComponent = (): JSX.Element => {
     return false;
   };
 
+  const flagProperties = [
+    {
+      id: "en",
+      img: {
+        imgURL: "/uk-flag.png",
+        imgAlt: "UK-flag",
+        imgId: "en",
+      },
+      setLanguage: () => setLanguage("en"),
+    },
+    {
+      id: "pt",
+      img: {
+        imgURL: "/br-flag.png",
+        imgAlt: "br-flag",
+        imgId: "pt",
+      },
+      setLanguage: () => setLanguage("pt"),
+    },
+    {
+      id: "ar",
+      img: {
+        imgURL: "/ar-flag.png",
+        imgAlt: "ar-flag",
+        imgId: "ar",
+      },
+      setLanguage: () => setLanguage("ar"),
+    },
+  ];
+
   return (
     <>
       <NavBar labels={{ button: i18n.t("navbar.inspire") }}>
-        <button
-          onClick={() => {
-            setLanguage("ar");
-          }}>
-          MUDAR
-        </button>
+        <FlagMenu flagProperties={flagProperties} />
         {navOptions.map((item) => (
           <div key={item.id}>
             <NavBarItem
@@ -90,6 +116,7 @@ const NavBarComponent = (): JSX.Element => {
         <MobileNavBar
           labels={{ close: "Close Navbar", button: i18n.t("navbar.inspire") }}
           onClose={() => setIsActive(!isActive)}>
+          <FlagMenu flagProperties={flagProperties} />
           {navOptions.map((item) => (
             <div key={item.id}>
               <NavBarItem

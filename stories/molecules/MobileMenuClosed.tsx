@@ -1,7 +1,5 @@
 import React from "react";
 
-import { CHUCK_NORRIS_AVATAR } from "../lib/utils";
-
 export type MobileMenuClosedProperties = {
   readonly onClick: () => void;
   readonly labels: {
