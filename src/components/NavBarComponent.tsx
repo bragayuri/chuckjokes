@@ -5,12 +5,11 @@ import { NavBarItem } from "stories/molecules/NavBarItem";
 import { MobileNavBar } from "stories/organisms/MobileNavBar";
 import { NavBar } from "stories/organisms/NavBar";
 
-enum NavSession {
+export enum NavSession {
   HOME = "HOME",
+  DAILY_JOKES = "DAILY",
   ABOUT = "ABOUT",
-  JOKES = "JOKES",
   CATEGORIES = "CATEGORIES",
-  SEARCH = "SEARCH",
 }
 
 type NavOptions = {
@@ -29,27 +28,21 @@ const navOptions: readonly NavOptions[] = [
   },
   {
     id: 1,
-    label: i18n.t("navbar.about"),
+    label: i18n.t("navbar.dailyJokes"),
     href: "#",
-    elementId: NavSession.ABOUT,
+    elementId: NavSession.DAILY_JOKES,
   },
   {
     id: 2,
-    label: i18n.t("navbar.jokes"),
+    label: i18n.t("navbar.about"),
     href: "#",
-    elementId: NavSession.JOKES,
+    elementId: NavSession.ABOUT,
   },
   {
     id: 3,
     label: i18n.t("navbar.categories"),
     href: "#",
     elementId: NavSession.CATEGORIES,
-  },
-  {
-    id: 4,
-    label: i18n.t("navbar.search"),
-    href: "#",
-    elementId: NavSession.SEARCH,
   },
 ];
 

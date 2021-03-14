@@ -1,19 +1,20 @@
 import React, { ReactNode, useContext, useEffect, useState } from "react";
-import api from "src/services/api";
+import { getCategories } from "src/backend/categoryObject";
+import { getRandomObject } from "src/backend/randomObject";
 import { Category, RandomObject } from "stories/lib/types";
 
 type AppState = {
   readonly categories?: readonly Category[];
   readonly setCategories?: (value: readonly Category[]) => void;
   readonly randomObject?: RandomObject;
-  readonly getRandomJoke: () => void;
+  readonly handleRandomJoke: () => void;
 };
 
 export const AppContext = React.createContext<AppState>({
   categories: [],
   setCategories: () => {},
   randomObject: undefined,
-  getRandomJoke: () => {},
+  handleRandomJoke: () => {},
 });
 
 export const useAppState = (): AppState => useContext(AppContext);
@@ -22,28 +23,26 @@ const ContextProvider = ({ children }: { readonly children: ReactNode }): JSX.El
   const [categories, setCategories] = useState<readonly Category[]>();
   const [randomObject, setRandomObject] = useState<RandomObject>();
 
-  const getCategories = async (): Promise<void> => {
-    api.get("/categories").then((response) => {
-      setCategories(
-        response.data.map((item: string, index: number) => {
-          return {
-            id: index,
-            category: item,
-          };
-        }),
-      );
-    });
+  const handleCategories = async (): Promise<void> => {
+    const response = await getCategories();
+    setCategories(
+      response.map((item: string, index: number) => {
+        return {
+          id: index,
+          category: item,
+        };
+      }),
+    );
   };
 
-  const getRandomJoke = async (): Promise<void> => {
-    api.get("/random").then((response) => {
-      setRandomObject(response.data);
-    });
+  const handleRandomJoke = async (): Promise<void> => {
+    const response = await getRandomObject();
+    setRandomObject(response);
   };
 
   useEffect(() => {
-    getCategories();
-    getRandomJoke();
+    handleCategories();
+    handleRandomJoke();
   }, []);
 
   return (
@@ -52,7 +51,7 @@ const ContextProvider = ({ children }: { readonly children: ReactNode }): JSX.El
         categories,
         setCategories,
         randomObject,
-        getRandomJoke,
+        handleRandomJoke,
       }}>
       {children}
     </AppContext.Provider>
