@@ -1,7 +1,7 @@
 import rosetta from "rosetta";
 import rosettaDebug from "rosetta/debug";
-import safeLocalStorage from "../safeLocalStorage";
 
+import safeLocalStorage from "../safeLocalStorage";
 import ar from "./ar";
 import en from "./en";
 import pt from "./pt";

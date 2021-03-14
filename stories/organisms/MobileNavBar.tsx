@@ -49,9 +49,12 @@ export const MobileNavBar: React.FC<MobileNavBarProperties> = ({ children, onClo
             </div>
             <div className="mt-3 px-2 space-y-4">{children}</div>
             <div className="flex justify-center py-6">
-              <button className="uppercase bg-yellow-500 text-sm text-white hover:opacity-90 p-3 rounded">
+              <a
+                rel="noopener noreferrer"
+                href="https://chucknorris.com/"
+                className="uppercase whitespace-nowrap bg-yellow-500 text-lg text-center font-style text-white hover:opacity-90 transition duration-500 p-2.5 px-6 rounded-md">
                 {labels.button}
-              </button>
+              </a>
             </div>
           </div>
         </div>
