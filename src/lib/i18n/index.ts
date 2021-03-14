@@ -1,5 +1,6 @@
 import rosetta from "rosetta";
 import rosettaDebug from "rosetta/debug";
+import safeLocalStorage from "../safeLocalStorage";
 
 import ar from "./ar";
 import en from "./en";
@@ -13,6 +14,7 @@ const languages = {
 
 // eslint-disable-next-line unicorn/prevent-abbreviations
 const i18n = process.env.NODE_ENV === "development" ? rosettaDebug(languages) : rosetta(languages);
-i18n.locale("pt");
+const language = safeLocalStorage.getItem("language");
+i18n.locale(language || "en");
 
 export default i18n;

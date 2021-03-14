@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAppState } from "src/lib/context";
 import i18n from "src/lib/i18n";
 import { MobileMenuClosed } from "stories/molecules/MobileMenuClosed";
 import { NavBarItem } from "stories/molecules/NavBarItem";
@@ -49,6 +50,7 @@ const navOptions: readonly NavOptions[] = [
 const NavBarComponent = (): JSX.Element => {
   const [isActive, setIsActive] = useState(false);
   const [activeId, setActiveId] = useState("home");
+  const { setLanguage } = useAppState();
 
   const handleScroll = (elementId: string): boolean => {
     // eslint-disable-next-line unicorn/prefer-query-selector
@@ -66,6 +68,12 @@ const NavBarComponent = (): JSX.Element => {
   return (
     <>
       <NavBar labels={{ button: i18n.t("navbar.inspire") }}>
+        <button
+          onClick={() => {
+            setLanguage("ar");
+          }}>
+          MUDAR
+        </button>
         {navOptions.map((item) => (
           <div key={item.id}>
             <NavBarItem
