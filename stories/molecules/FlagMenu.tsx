@@ -16,7 +16,7 @@ export const FlagMenu: React.FC<FlagMenuProperties> = ({ flagProperties }) => {
   return (
     <div className="flex mx-10 gap-x-2">
       {flagProperties.map((item) => (
-        <span className="cursor-pointer hover:opacity-80" onClick={item.setLanguage}>
+        <span key={item.id} className="cursor-pointer hover:opacity-80" onClick={item.setLanguage}>
           <img
             id={item.img.imgId}
             src={item.img.imgURL}
