@@ -28,8 +28,8 @@ export const HomeBanner: React.FC<HomeBannerProperties> = ({
   return (
     <div id={componentId} className="w-full">
       <div
-        className={`flex flex-col lg:${
-          isImgLeft ? "flex-row" : "flex-row-reverse"
+        className={`flex flex-col ${
+          isImgLeft ? "lg:flex-row" : "lg:flex-row-reverse"
         } justify-between items-center`}>
         <div className="relative px-20 pb-6">
           <div
