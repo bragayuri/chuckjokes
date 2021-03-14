@@ -1,3 +1,20 @@
+Mr. Norris is a web application that enables users to find out funny facts about Chuck Norris.
+It is empowered with the Chuck Norris API.
+
+ The aplication holds a solid stack and besides the minimalist design shows up quite simple, the code structure is strong and uses the latest 
+ technologies available.
+  The app was built in:
+  - ReactJs (required for this challenge).
+  - Typescript (I personally prefer typed languages as I come from a Java background plus it is more consistent and avoid bugs).
+  - Tailwind (I am new to Tailwind and since the first project I had the chance to use it, I have prefered it over other Frameworks such Bootstrap. It offers more flexibility to create my own components and it decreases quite a lot the development time ).
+  - Cypress (required for this challenge. Among all the technologies involved, this one is what devotes more my attention. It is great when it comes to cross-browser testing plus it is super user friendly and simple to set up).
+  - Storybook (I have been also designing my projects following Atomic Design principles.And for that Storybook is just great! It enables me to isolate the components and work from a bottom-to-top level. That way the UI code remains isolated and following SOLID principals. Additionaly it provides great scalability and component reusage which decreases a lot the time spent on the UI component development )
+ - i18n (To provide great accessibility to people from different backgrounds I decided to translate the main tags on the website to Portuguese, English and Arabic. I have also styled the components to RTL direction using a Tailwind plugin 
+ https://www.npmjs.com/package/tailwindcss-rtl. I have implemented the flag buttons to translate the web app and transform the design from LTR to RTL dir).
+ - Axios (For the API request I have used Axios which is one of the most popular promise-based HTTP client. I am more familiar with it and duo its simplicity I decided to implement it over the Next API ).
+ - Chuck Norris API data retrieve https://api.chucknorris.io/
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -12,23 +29,4 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
