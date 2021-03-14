@@ -21,7 +21,7 @@ export const MobileNavBar: React.FC<MobileNavBarProperties> = ({ children, onClo
               <div>
                 <img
                   className="h-20 w-20 rounded-full object-fit"
-                  src={CHUCK_NORRIS_AVATAR}
+                  src="/chuck-norris-logo-1.png"
                   alt="chuck-norris-avatar"
                 />
               </div>

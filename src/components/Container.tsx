@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { ReactNode } from "react";
+import { Footer } from "stories/organisms/Footer";
 
 import NavBarComponent from "./NavBarComponent";
 
@@ -10,6 +11,7 @@ const Container = ({ children }: { readonly children: ReactNode }): JSX.Element 
       <NavBarComponent />
       <div className="overflow-y-auto lg:static lg:h-auto">
         <main className="2xl:max-w-7xl 2xl:mx-auto">{children}</main>
+        <Footer />
       </div>
     </div>
   );

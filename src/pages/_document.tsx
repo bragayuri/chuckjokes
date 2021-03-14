@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   render() {
     return (
-      <Html dir="rtl">
+      <Html>
         <Head>
           <link rel="shortcut icon" href="favicon.png" type="image/png" />
           <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />

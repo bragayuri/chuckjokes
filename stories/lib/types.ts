@@ -19,6 +19,12 @@ export type Category = {
   readonly category: string;
 };
 
+export type CategoryObject = {
+  readonly id: string;
+  readonly value: string;
+  readonly category: string;
+};
+
 export type RandomObject = {
   readonly id: string;
   readonly categories: readonly string[];
