@@ -10,6 +10,10 @@ const en = {
     pick: "Pick a Category",
     factsByCategory: "Facts by Category",
   },
+  search: {
+    title: "Search Chuck Norris Facts",
+    search: "Search",
+  },
   landing: {
     mrNorris: "Mr. Norris Jokes",
     handing: "handing curated Chuck Norris facts",

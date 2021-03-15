@@ -10,6 +10,10 @@ const en = {
     pick: "اختر تصنيف",
     factsByCategory: "الحقائق حسب الفئة",
   },
+  search: {
+    title: "ابحث عن الحقائق",
+    search: "بحث",
+  },
   landing: {
     mrNorris: "نكت السيد نوريس",
     handing: "تسليم حقائق تشاك نوريس المعالجة",
