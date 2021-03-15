@@ -1,6 +1,6 @@
 context("Viewport", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3001/");
+    cy.visit("https://chuckjokes.vercel.app/");
   });
 
   it("cy.viewport() - set the viewport size and dimensions", () => {
