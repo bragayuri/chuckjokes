@@ -8,7 +8,7 @@ const LandingBanner = (): JSX.Element => {
         <section className="w-full">
           <article className="flex flex-col space-y-10 px-2 xl:px-20 xl:pt-48">
             <header>
-              <h1 className="text-black uppercase text-6xl font-bold">
+              <h1 id="main-title" className="text-black uppercase text-6xl font-bold">
                 {i18n.t("landing.mrNorris")}
               </h1>
               <h1 className="uppercase text-red-900 text-xl font-style pt-2">

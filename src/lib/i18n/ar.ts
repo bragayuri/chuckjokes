@@ -8,6 +8,7 @@ const en = {
   },
   category: {
     pick: "اختر تصنيف",
+    factsByCategory: "الحقائق حسب الفئة",
   },
   landing: {
     mrNorris: "نكت السيد نوريس",
