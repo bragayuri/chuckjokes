@@ -12,6 +12,7 @@ export enum NavSession {
   DAILY_JOKES = "DAILY",
   ABOUT = "ABOUT",
   CATEGORIES = "CATEGORIES",
+  SEARCH = "SEARCH",
 }
 
 type NavOptions = {
@@ -45,6 +46,12 @@ const navOptions: readonly NavOptions[] = [
     label: i18n.t("navbar.categories"),
     href: "#",
     elementId: NavSession.CATEGORIES,
+  },
+  {
+    id: 4,
+    label: i18n.t("navbar.search"),
+    href: "#",
+    elementId: NavSession.SEARCH,
   },
 ];
 

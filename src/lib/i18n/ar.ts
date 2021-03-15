@@ -9,6 +9,10 @@ const en = {
   category: {
     pick: "اختر تصنيف",
   },
+  search: {
+    title: "ابحث عن الحقائق",
+    search: "بحث",
+  },
   landing: {
     mrNorris: "نكت السيد نوريس",
     handing: "تسليم حقائق تشاك نوريس المعالجة",

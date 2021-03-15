@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 /* eslint-disable unicorn/prevent-abbreviations */
 import React, { ReactNode, useContext, useEffect, useState } from "react";
-import { getCategories } from "src/backend/categoryObject";
+import { getCategories, getFactsByText } from "src/backend/categoryObject";
 import { getRandomObject } from "src/backend/randomObject";
 import { Category, RandomObject } from "stories/lib/types";
 
@@ -14,6 +14,10 @@ type AppState = {
   readonly randomObject?: RandomObject;
   readonly handleRandomJoke: () => void;
   readonly setLanguage: (value: string) => void;
+  readonly searchForFacts: (value: string) => void;
+  readonly research?: readonly RandomObject[];
+  readonly loading: boolean;
+  readonly error: string;
 };
 
 export const AppContext = React.createContext<AppState>({
@@ -22,6 +26,10 @@ export const AppContext = React.createContext<AppState>({
   randomObject: undefined,
   handleRandomJoke: () => {},
   setLanguage: () => {},
+  searchForFacts: () => {},
+  research: [],
+  loading: false,
+  error: "",
 });
 
 export const useAppState = (): AppState => useContext(AppContext);
@@ -30,6 +38,9 @@ const ContextProvider = ({ children }: { readonly children: ReactNode }): JSX.El
   const [categories, setCategories] = useState<readonly Category[]>();
   const [randomObject, setRandomObject] = useState<RandomObject>();
   const [language, setLanguage] = useState(safeLocalStorage.getItem("language") || "en");
+  const [research, setResearch] = useState<readonly RandomObject[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (language === "ar") {
@@ -45,6 +56,7 @@ const ContextProvider = ({ children }: { readonly children: ReactNode }): JSX.El
   }, [language]);
 
   const handleCategories = async (): Promise<void> => {
+    setLoading(true);
     const response = await getCategories();
     setCategories(
       response.map((item: string, index: number) => {
@@ -54,11 +66,25 @@ const ContextProvider = ({ children }: { readonly children: ReactNode }): JSX.El
         };
       }),
     );
+    setLoading(false);
+  };
+
+  const searchForFacts = async (value: string): Promise<void> => {
+    setLoading(true);
+    const response = await getFactsByText(value);
+    console.log(response);
+    if (response.total === 0) {
+      setError("Chuck Norris found you are a serious Joke! Nothing was found!");
+    }
+    setResearch(response.result);
+    setLoading(false);
   };
 
   const handleRandomJoke = async (): Promise<void> => {
+    setLoading(true);
     const response = await getRandomObject();
     setRandomObject(response);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -74,6 +100,10 @@ const ContextProvider = ({ children }: { readonly children: ReactNode }): JSX.El
         randomObject,
         handleRandomJoke,
         setLanguage,
+        searchForFacts,
+        research,
+        loading,
+        error,
       }}>
       {children}
     </AppContext.Provider>
