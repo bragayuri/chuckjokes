@@ -6,7 +6,7 @@ describe("Sample Test", () => {
 
 context("Actions", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3001/");
+    cy.visit("https://chuckjokes.vercel.app/");
     cy.viewport(2999, 2999);
   });
 

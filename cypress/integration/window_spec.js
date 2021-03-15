@@ -1,6 +1,6 @@
 context("Window", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3001/");
+    cy.visit("https://chuckjokes.vercel.app/");
   });
 
   it("cy.window() - get the global window object", () => {
