@@ -21,3 +21,14 @@ export const getCategories = async (): Promise<any> => {
     }
   });
 };
+
+export const getFactsByText = async (text: string): Promise<any> => {
+  return new Promise((resolve, reject) => {
+    const data = api.get(`/search?query=${text}`).then((response) => response.data);
+    if (data) {
+      resolve(data);
+    } else {
+      reject(new Error("Chuck Norris do not forgive mistakes! The System is dead!HA Ha HA"));
+    }
+  });
+};
