@@ -33,7 +33,7 @@ const CategoriesComponent = (): JSX.Element => {
     if (categories) {
       setButtonProperties(
         categories.map((item) => ({
-          id: String(item.id),
+          id: String(item.category),
           label: i18n.t(`categories.${item.category}`),
           onClick: () => {
             setActiveCategory(item.category);
@@ -62,9 +62,9 @@ const CategoriesComponent = (): JSX.Element => {
         }}
         className="bg-gray-100 max-w-xl flex-1 flex flex-col mx-4 md:ms-80 md:me-10 xl:ms-0 py-24 xl:py-24 items-center">
         {categoryObject.category ? (
-          <div className="font-bold text-3xl text-black pb-4">{`Facts by Category - ${capitalizeFirstLetter(
-            categoryObject.category,
-          )}`}</div>
+          <div id="category-title" className="font-bold text-3xl text-black pb-4">{`${i18n.t(
+            "category.factsByCategory",
+          )} - ${capitalizeFirstLetter(categoryObject.category)}`}</div>
         ) : (
           <div className="font-bold text-3xl text-black pb-4">{i18n.t("category.pick")}</div>
         )}

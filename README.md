@@ -13,6 +13,7 @@ It is empowered with the Chuck Norris API.
  https://www.npmjs.com/package/tailwindcss-rtl. I have implemented the flag buttons to translate the web app and transform the design from LTR to RTL dir).
  - Axios (For the API request I have used Axios which is one of the most popular promise-based HTTP client. I am more familiar with it and duo its simplicity I decided to implement it over the Next API ).
  - Chuck Norris API data retrieve https://api.chucknorris.io/
+ - Vercel for deploying. Because the application is built with Next it does offer a great advantage when it comes to deploying using Vercel.It is simple and quite quick process. Additionaly it keeps updating its production version with every pull request approved which reduces development time and increases production.
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
