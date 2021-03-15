@@ -10,6 +10,10 @@ const en = {
     pick: "Escolha uma Categoria",
     factsByCategory: "Fatos por Categoria",
   },
+  search: {
+    title: "Pesquisar Fatos",
+    search: "Pesquisar",
+  },
   landing: {
     mrNorris: "Mr. Norris Jokes",
     handing: "Apresentando fatos interessantes de Chuck Norris",
