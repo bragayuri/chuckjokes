@@ -8,6 +8,7 @@ const en = {
   },
   category: {
     pick: "Escolha uma Categoria",
+    factsByCategory: "Fatos por Categoria",
   },
   landing: {
     mrNorris: "Mr. Norris Jokes",

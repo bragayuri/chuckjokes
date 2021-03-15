@@ -8,6 +8,7 @@ const en = {
   },
   category: {
     pick: "Pick a Category",
+    factsByCategory: "Facts by Category",
   },
   landing: {
     mrNorris: "Mr. Norris Jokes",
@@ -17,7 +18,7 @@ const en = {
   },
   categories: {
     animal: "Animal",
-    career: "Carreer",
+    career: "Career",
     celebrity: "Celebrity",
     dev: "Dev",
     explicit: "Explicit",

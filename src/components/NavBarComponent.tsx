@@ -68,7 +68,7 @@ const NavBarComponent = (): JSX.Element => {
 
   const flagProperties = [
     {
-      id: "en",
+      id: "en-flag",
       img: {
         imgURL: "/uk-flag.png",
         imgAlt: "UK-flag",
@@ -77,7 +77,7 @@ const NavBarComponent = (): JSX.Element => {
       setLanguage: () => setLanguage("en"),
     },
     {
-      id: "pt",
+      id: "pt-flag",
       img: {
         imgURL: "/br-flag.png",
         imgAlt: "br-flag",
@@ -86,7 +86,7 @@ const NavBarComponent = (): JSX.Element => {
       setLanguage: () => setLanguage("pt"),
     },
     {
-      id: "ar",
+      id: "ar-flag",
       img: {
         imgURL: "/ar-flag.png",
         imgAlt: "ar-flag",

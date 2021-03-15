@@ -68,11 +68,13 @@ export const HomeBanner: React.FC<HomeBannerProperties> = ({
             </h2>
             {isRandomObject ? (
               <div className="py-4 flex justify-between items-center">
-                <div onClick={onClickRandom} className="mx-4 cursor-pointer" />
                 <h3 className="text-xl text-black">
-                  <span>{labels.main}</span>
+                  <span id="random-text">{labels.main}</span>
                 </h3>
-                <div onClick={onClickRandom} className="mx-4 cursor-pointer flex">
+                <div
+                  id="clickable-random"
+                  onClick={onClickRandom}
+                  className="mx-4 cursor-pointer flex">
                   <BsPlusCircle color="black" size="20" />
                   <span className="ps-2">{labels.more}</span>
                 </div>
@@ -80,7 +82,7 @@ export const HomeBanner: React.FC<HomeBannerProperties> = ({
             ) : (
               <div className="py-4">
                 <h3 className="text-xl text-black">
-                  <span>{labels.main}</span>
+                  <span id="random-text">{labels.main}</span>
                 </h3>
               </div>
             )}
